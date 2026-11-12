@@ -1,0 +1,147 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise Dashboard - Week 6</title>
+    <!-- Google Fonts -->
+    <title>SpendWise Dashboard - Interactive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- 1. JavaScript Link -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Dashboard Grid Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar / Navigation Menu -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>SpendWise</h2>
+@@ -30,102 +24,46 @@ <h2>SpendWise</h2>
+                <a href="#" class="nav-item" tabindex="0">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-title">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Check your browser console for JS financial calculations.</p>
+                    <p>Welcome back, <span id="display-username">MAANAF 7</span>! Manage your budget interactively.</p>
+                </div>
+                <div class="header-profile">
+                    <span class="user-name">MAANAF 7</span>
+                    <div class="avatar">M</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Category Cards Grid -->
+            <section class="cards-grid">
+                
+                <!-- Card 1: Food -->
+                <div class="card" tabindex="0">
+                    <div class="card-header">
+                        <h3>Food & Dining</h3>
+                        <span class="badge">Expense</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="amount">$345.50</p>
+                        <span class="sub-text">18 Transactions</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Transport -->
+                <div class="card" tabindex="0">
+                    <div class="card-header">
+                        <h3>Transport</h3>
+                        <span class="badge">Expense</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="amount">$120.00</p>
+                        <span class="sub-text">9 Transactions</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Rent -->
+                <div class="card" tabindex="0">
+                    <div class="card-header">
+                        <h3>Rent & Housing</h3>
+                        <span class="badge">Fixed</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="amount">$850.00</p>
+                        <span class="sub-text">Monthly Payment</span>
+                    </div>
+            <section class="summary-section" style="margin-bottom: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div class="card" style="padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <h3>Total Budget</h3>
+                    <p id="summary-budget" class="amount" style="font-size: 1.8rem; font-weight: 700; color: #2563eb;">$2500.00</p>
+                </div>
+
+                <!-- Card 4: Entertainment -->
+                <div class="card" tabindex="0">
+                    <div class="card-header">
+                        <h3>Entertainment</h3>
+                        <span class="badge">Expense</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="amount">$75.20</p>
+                        <span class="sub-text">4 Transactions</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Savings -->
+                <div class="card" tabindex="0">
+                    <div class="card-header">
+                        <h3>Savings</h3>
+                        <span class="badge success">Goal</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="amount">$1,200.00</p>
+                        <span class="sub-text">Added this month</span>
+                    </div>
+                <div class="card" style="padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <h3>Total Expenses</h3>
+                    <p id="summary-spent" class="amount" style="font-size: 1.8rem; font-weight: 700; color: #dc2626;">$0.00</p>
+                </div>
+
+                <!-- Card 6: Utilities -->
+                <div class="card" tabindex="0">
+                    <div class="card-header">
+                        <h3>Utilities</h3>
+                        <span class="badge">Bills</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="amount">$190.40</p>
+                        <span class="sub-text">Water, Power, Internet</span>
+                    </div>
+                <div class="card" style="padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                    <h3>Remaining Balance</h3>
+                    <p id="summary-balance" class="amount" style="font-size: 1.8rem; font-weight: 700; color: #16a34a;">$0.00</p>
+                </div>
+            </section>
+
+            <section class="interaction-section" style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                <h3>Add New Expense</h3>
+                <form id="expense-form" style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                    <input type="text" id="expense-name" placeholder="Expense Name (e.g., Coffee)" required style="padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px; flex: 2; min-width: 200px;">
+                    <input type="number" id="expense-amount" placeholder="Amount ($)" step="0.01" required style="padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px; flex: 1; min-width: 120px;">
+                    <button type="submit" style="padding: 0.75rem 1.5rem; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Add Expense</button>
+                </form>
+                <div id="budget-alert" style="margin-top: 1rem; padding: 0.75rem; border-radius: 8px; font-weight: 500; display: none;"></div>
+            </section>
+
+            <section class="cards-grid" id="expenses-container">
+            </section>
+        </main>
+
+    </div>
+
+</body>
+</html>
