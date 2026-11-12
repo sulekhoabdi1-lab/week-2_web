@@ -1,347 +1,185 @@
-/* 3. Theme Using CSS Custom Properties (:root) */
-:root {
-    --primary-color: #4f46e5;
-    --primary-hover: #4338ca;
-    --bg-color: #f8fafc;
-    --card-bg: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --brand-color: #4f46e5;       /* Indigo */
-    --brand-hover: #4338ca;
-    --accent-color: #10b981;      /* Emerald Green */
-    --surface-color: #ffffff;     /* Card background */
-    --bg-color: #f8fafc;          /* Page background */
-    --text-primary: #1e293b;      /* Dark slate */
-    --text-secondary: #64748b;    /* Muted grey */
-    --border-color: #e2e8f0;
-    --table-alt: #f1f5f9;
-    --sidebar-bg: #1e293b;
-    --sidebar-text: #f8fafc;
-    --sidebar-hover: #334155;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-}
 
-/* Stretch Goal: Dark Theme Support */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --brand-color: #6366f1;
-        --brand-hover: #818cf8;
-        --accent-color: #34d399;
-        --surface-color: #1e293b;
-        --bg-color: #0f172a;
-        --text-primary: #f8fafc;
-        --text-secondary: #94a3b8;
-        --border-color: #334155;
-        --sidebar-bg: #090d16;
-        --sidebar-text: #f8fafc;
-        --sidebar-hover: #1e293b;
-        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* Global Styles */
+/* General page styling */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    margin: 0;
-    padding: 30px 20px;
-    color: var(--text-main);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #263238;
+    line-height: 1.6;
 }
 
-h1, h2, h3, summary {
-h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-main);
-    margin: 0;
+/* Header */
+.main-header {
+    background: linear-gradient(135deg, #123c69, #247ba0);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
 }
 
-h1 {
-    font-size: 2rem;
+.main-header img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.main-header h1 {
     margin-bottom: 8px;
-/* 2. CSS Grid & Flexbox: Overall Dashboard Structure */
-.dashboard-container {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    min-height: 100vh;
+    font-size: 32px;
+}
+
+/* Main sections */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
 }
 
 h2 {
-    font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 16px;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 8px;
-/* Sidebar Styling (Flexbox inside) */
-.sidebar {
-    background-color: var(--sidebar-bg);
-    color: var(--sidebar-text);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    color: #123c69;
+    margin-bottom: 18px;
 }
 
-p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-.sidebar-brand h2 {
-    font-size: 1.5rem;
-    color: var(--sidebar-text);
-}
-
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-#main-header {
-    text-align: center;
-.nav-item {
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.logo {
-    border-radius: 50%;
-    margin-bottom: 12px;
-    border: 3px solid var(--primary-color);
-.nav-item:hover, .nav-item.active {
-    background-color: var(--sidebar-hover);
-    color: #ffffff;
-}
-
-.instructions summary {
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--primary-color);
-/* Main Content Wrapper */
-.main-content {
-    display: flex;
-    flex-direction: column;
-    padding: 32px;
-    gap: 32px;
-    overflow-y: auto;
-}
-
-.input-group {
-/* Header Styling (Flexbox) */
-.dashboard-header {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--surface-color);
-    padding: 20px 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-}
-
-.input-group > input, 
-.input-group > select {
-    font-family: 'Inter', sans-serif;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    flex: 1;
-    min-width: 160px;
-    font-size: 0.95rem;
-    background-color: #fff;
-    color: var(--text-main);
-.header-title h1 {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-.header-title p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-top: 4px;
-}
-
-.btn {
-    font-family: 'Poppins', sans-serif;
-    padding: 12px 24px;
-    background-color: var(--primary-color);
-.header-profile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.user-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    background-color: var(--brand-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    font-family: 'Poppins', sans-serif;
-}
-
-.btn:hover {
-    background-color: var(--primary-hover);
-/* 1 & 5. Category Cards Grid & Micro-interactions */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-}
-
-.expense-table {
+/* Expense table */
+table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    overflow: hidden;
-    border-radius: 8px;
-.card {
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: var(--shadow);
+}
+
+th,
+td {
+    border: 1px solid #d9e1e8;
+    padding: 13px;
+    text-align: left;
+}
+
+thead {
+    background-color: #123c69;
+    color: white;
+}
+
+/* Advanced selector 1: even rows */
+tbody tr:nth-child(even) {
+    background-color: #edf3f8;
+}
+
+/* Advanced selector 2: hover effect */
+tbody tr:hover {
+    background-color: #d6eaf8;
+    transition: background-color 0.2s ease;
+}
+
+/* Advanced selector 3: descendant selector */
+.expenses-section td {
+    font-size: 14px;
+}
+
+/* Add expense form */
+form {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 16px;
-    cursor: pointer;
-
-    /* Micro-interaction transition (250ms or less) */
-    transition: transform 250ms ease, box-shadow 250ms ease;
+    gap: 10px;
 }
 
-.expense-table th, 
-.expense-table td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Advanced selector 4: direct child selector */
+.add-expense-section > h2 {
+    border-bottom: 2px solid #247ba0;
+    padding-bottom: 10px;
 }
 
-.expense-table th {
-    background-color: var(--primary-color);
-    color: white;
-.card-header h3 {
-    font-size: 1.1rem;
-    color: var(--text-primary);
-}
-
-.badge {
-    background-color: #e0e7ff;
-    color: var(--brand-color);
-    padding: 4px 8px;
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc9d3;
     border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
 }
 
-.expense-table tr:nth-child(even) {
-    background-color: var(--table-alt);
-.badge.success {
-    background-color: #d1fae5;
-    color: var(--accent-color);
-}
-
-.expense-table tr:hover {
-    background-color: #eef2ff;
-.card-body .amount {
-    font-size: 1.75rem;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-}
-
-.video-section iframe {
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-.sub-text {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
-/* 5. Micro-interactions: Hover and Keyboard Focus states */
-.card:hover, .card:focus {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+/* Advanced selector 5: focus state */
+input:focus,
+select:focus {
     outline: none;
-    border-color: var(--brand-color);
+    border-color: #247ba0;
+    box-shadow: 0 0 5px rgba(36, 123, 160, 0.4);
 }
 
-/* 4. Responsive Design: Collapse layout below 768px */
-@media (max-width: 768px) {
-    .dashboard-container {
-        grid-template-columns: 1fr;
+button {
+    background-color: #123c69;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #247ba0;
+}
+
+/* Instructions */
+details {
+    padding: 10px;
+    background-color: #edf3f8;
+    border-radius: 6px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #123c69;
+}
+
+/* Video */
+.video-section iframe {
+    display: block;
+    max-width: 100%;
+    margin: 15px auto 0;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #123c69;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobile screen */
+@media (max-width: 600px) {
+    main {
+        width: 95%;
     }
 
-    .sidebar {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 20px;
-        gap: 16px;
+    section {
+        padding: 15px;
     }
 
-    .sidebar-nav {
-        flex-direction: row;
-        gap: 8px;
+    table {
+        font-size: 12px;
     }
 
-    .nav-item {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+    th,
+    td {
+        padding: 8px 5px;
     }
 
-    .main-content {
-        padding: 16px;
-        gap: 16px;
-    }
-
-    .dashboard-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+    .main-header h1 {
+        font-size: 24px;
     }
 }
