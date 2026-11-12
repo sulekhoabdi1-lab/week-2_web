@@ -1,2 +1,30 @@
-# SpendWise - JavaScript Foundation (Week 6)# SpendWise - Interactive Dashboard (Week 6/7)This project extends the SpendWise dashboard by integrating foundational JavaScript concepts to process budgeting data, handle user input, perform financial calculations, and organize logic with functions.## Features & Implementation Details:1. **What the SpendWise Project Does:**   SpendWise is a personal finance dashboard designed to help users track monthly budgets, view structured financial categories, and process income versus expense calculations.2. **JavaScript Concepts Implemented:**   - Variables (`let`) and Data Types (Numbers, Strings, Arrays, Objects).   - User Input Collection (`prompt()`).   - Mathematical Calculations (Totals and remaining balances).   - Reusable Functions and Control Flow (`for` loops, `if/else` statements).   - Console Output Formatting (`console.log`).3. **How Variables Are Being Used:**   - `totalMonthlyBudget`: Stores the numerical value of the user's available budget.   - `userName`: Stores the string representing the active user profile ("MAANAF 7").   - `expensesList`: Stores an array of expense objects, where each object holds a category name and its associated numerical amount.4. **How User Input Is Collected:**   - The application utilizes JavaScript's `prompt()` dialog box inside `initSpendWiseApp()` to allow users to input or update their custom monthly budget interactively when the page loads.5. **How Calculations Are Performed:**   - Total expenses are calculated by iterating through the `expensesList` array and accumulating each expense amount.   - The remaining balance is determined by subtracting total expenses from the `totalMonthlyBudget` using dedicated mathematical functions.6. **How Functions Help Organize the Code:**   - `calculateTotalExpenses(expenses)`: Encapsulates the logic for summing array items.   - `calculateRemainingBalance(budget, totalExpenses)`: Separates subtraction logic.   - `displayFinancialSummary(...)`: Handles formatting and output logging.   - `initSpendWiseApp()`: Manages initialization and user input workflow.## Improvements & DOM Manipulation Implementation:- Replaced any console logs and prompts with a fully interactive HTML form and event listeners.- Integrated DOM manipulation (`document.createElement`, `innerHTML`, `textContent`) to dynamically render expense cards, totals, and alerts directly onto the screen without page reloads.- Used loops and arrays (`expensesList`) to process data and conditional statements (`if/else`) to display dynamic status alerts based on the remaining budget.
-Collapse file‎index.html‎Copy file name to clipboardExpand all lines:
+
+# Week 2 Assignment: SpendWise Budget Tracker
+
+## Project Description
+
+SpendWise is a simple Budget Tracker website built using HTML and CSS. It helps users view sample expenses and enter new expense information.
+
+## Project Files
+
+- index.html - Contains the structure of the website, including the expense table, expense form, logo, YouTube video, and instructions section.
+- style.css - Controls the website's appearance, including colors, spacing, table styling, form styling, hover effects, and responsive design.
+- README.md - Explains the project and describes what each file does.
+
+## Features
+
+1. An expense table with five sample expenses.
+2. An expense form with five category options.
+3. A logo image near the main heading.
+4. An embedded YouTube video.
+5. A collapsible instructions section using details and summary.
+6. Advanced CSS selectors, including nth-child(even), hover, focus, and descendant selectors.
+
+## Technologies Used
+
+- HTML5
+- CSS3
+
+## Note
+
+The Add Expense button is not functional yet. JavaScript functionality will be added in a later assignment.
